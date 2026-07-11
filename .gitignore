@@ -1,0 +1,20 @@
+# Windows / WSL executables
+*.exe
+main
+a.out
+
+# Problem files
+input*.txt
+output*.txt
+problem.html
+image*.png
+image*.jpg
+image*.gif
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Config
+.sirius-cf-cli.json
