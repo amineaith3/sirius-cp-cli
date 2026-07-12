@@ -16,7 +16,8 @@ def init(
     handle: str = typer.Option(..., prompt="Your Codeforces handle"),
     lang: str = typer.Option("cpp", prompt="Default language (cpp/py)"),
     cookie: str = typer.Option("", prompt="CF_COOKIE string (leave blank to read from .env later)", show_default=False),
-    template: str = typer.Option("", prompt="Path to custom C++ template (leave blank for default)", show_default=False)
+    template: str = typer.Option("", prompt="Path to custom C++ template (leave blank for default)", show_default=False),
+    workspace: str = typer.Option("", prompt="Path to CF offline workspace (leave blank for default ~/Desktop/cf-offline)", show_default=False)
 ):
     """Initialize the sirius-cf configuration."""
     config = load_config()
@@ -26,6 +27,8 @@ def init(
         config["cf_cookie"] = cookie
     if template:
         config["template_cpp"] = template
+    if workspace:
+        config["workspace"] = workspace
         
     save_config(config)
     console.print(f"[bold green][OK] Config saved to ~/.sirius-cf-cli.json[/bold green]")

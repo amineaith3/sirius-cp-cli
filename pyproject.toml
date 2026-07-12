@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "sirius-cf-cli"
-version = "0.1.0"
-description = "A local CLI environment for Codeforces competitive programming"
+name = "sirius-cp-cli"
+version = "0.2.0"
+description = "A unified local CLI environment for Codeforces and CSES competitive programming"
 authors = [
     { name = "Amine Ait Hamma", email = "amineaithamma2004@gmail.com" }
 ]
@@ -20,3 +20,4 @@ requires-python = ">=3.9"
 
 [project.scripts]
 sirius-cf = "sirius_cf_cli.main:app"
+sirius-cses = "sirius_cses_cli.main:app"

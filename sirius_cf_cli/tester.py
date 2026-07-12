@@ -6,6 +6,8 @@ import subprocess
 from rich.console import Console
 from rich.panel import Panel
 
+from sirius_cf_cli.config import get_workspace_path
+
 console = Console()
 
 def compare_outputs(expected_file: str, actual_output: str):
@@ -21,7 +23,8 @@ def compare_outputs(expected_file: str, actual_output: str):
 def test_solution(contest_id: str, problem_id: str, lang: str):
     contest_id = re.sub(r'[^a-zA-Z0-9]', '', contest_id)
     problem_id = re.sub(r'[^a-zA-Z0-9]', '', problem_id)
-    folder_name = f"{contest_id}-{problem_id}"
+    ws_path = get_workspace_path()
+    folder_name = os.path.join(ws_path, f"{contest_id}-{problem_id}")
     if not os.path.exists(folder_name):
         console.print(f"[bold red]Folder {folder_name} not found. Run fetch first.[/bold red]")
         return False

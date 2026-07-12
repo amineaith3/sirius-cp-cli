@@ -6,14 +6,15 @@ from bs4 import BeautifulSoup
 from rich.console import Console
 
 import time
-from sirius_cf_cli.config import get_cookie, get_handle
+from sirius_cf_cli.config import get_cookie, get_handle, get_workspace_path
 
 console = Console()
 
 def submit_solution(contest_id: str, problem_id: str, lang: str):
     contest_id = re.sub(r'[^a-zA-Z0-9]', '', contest_id)
     problem_id = re.sub(r'[^a-zA-Z0-9]', '', problem_id)
-    folder_name = f"{contest_id}-{problem_id}"
+    ws_path = get_workspace_path()
+    folder_name = os.path.join(ws_path, f"{contest_id}-{problem_id}")
     if not os.path.exists(folder_name):
         console.print(f"[bold red]Folder {folder_name} not found.[/bold red]")
         return False

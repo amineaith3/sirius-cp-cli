@@ -16,5 +16,11 @@ __pycache__/
 *.pyc
 .env
 
-# Config
+# Config & Data
 .sirius-cf-cli.json
+.sirius-cses-cli.json
+.sirius-cses-index.json
+
+# Offline Workspaces (if initialized in repo root)
+cf-offline/
+cses-offline/

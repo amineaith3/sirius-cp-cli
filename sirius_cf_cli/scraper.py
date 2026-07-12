@@ -7,16 +7,21 @@ from rich.console import Console
 from rich.progress import Progress
 
 from sirius_cf_cli.templates import MATHJAX_BOILERPLATE, CPP_TEMPLATE, PY_TEMPLATE
-from sirius_cf_cli.config import get_template_cpp_path
+from sirius_cf_cli.config import get_template_cpp_path, get_workspace_path
 
 console = Console()
 
 def fetch_problem(contest_id: str, problem_id: str):
     contest_id = re.sub(r'[^a-zA-Z0-9]', '', contest_id)
     problem_id = re.sub(r'[^a-zA-Z0-9]', '', problem_id)
-    folder_name = f"{contest_id}-{problem_id}"
-    os.makedirs(folder_name, exist_ok=True)
+    ws_path = get_workspace_path()
+    folder_name = os.path.join(ws_path, f"{contest_id}-{problem_id}")
     
+    if os.path.exists(folder_name) and os.path.exists(os.path.join(folder_name, "problem.html")):
+        console.print(f"[yellow]Problem {contest_id}-{problem_id} already exists in {folder_name}. Skipping download.[/yellow]")
+        return True
+        
+    os.makedirs(folder_name, exist_ok=True)
     url = f"https://codeforces.com/problemset/problem/{contest_id}/{problem_id}"
     console.print(f"[bold blue]Fetching problem from:[/bold blue] {url}")
     
