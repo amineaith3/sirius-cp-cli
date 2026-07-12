@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -22,14 +22,15 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
                         brand: {
-                            blue: '#3b82f6',
-                            pink: '#ec4899',
-                            dark: '#0f172a',
-                            darker: '#020617',
+                            cyan: '#06b6d4',
+                            dark: '#0d1117', // GitHub Dark theme background
+                            darker: '#010409', // GitHub Dark theme deep background
+                            border: '#30363d',
+                            surface: '#161b22',
                         }
                     }
                 }
@@ -37,29 +38,26 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-slate-900 dark:bg-brand-darker dark:text-slate-200 transition-colors duration-300 font-sans antialiased">
+<body class="bg-white text-gray-900 dark:bg-brand-dark dark:text-gray-300 transition-colors duration-200 font-sans antialiased selection:bg-brand-cyan selection:text-white">
 
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-200 dark:border-slate-800">
+    <nav class="fixed top-0 w-full z-50 bg-gray-100 dark:bg-brand-darker border-b border-gray-300 dark:border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+            <div class="flex justify-between h-14 items-center">
                 <div class="flex-shrink-0 flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-blue to-brand-pink flex items-center justify-center text-white font-bold text-lg">
-                        S
-                    </div>
-                    <span class="font-bold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-pink">
-                        Sirius CP
+                    <span class="font-mono font-bold text-xl tracking-tight text-gray-900 dark:text-white">
+                        <span class="text-brand-cyan">~/</span>sirius-cp-cli
                     </span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="https://github.com/amineaith3/sirius-cp-cli" target="_blank" class="text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    <a href="https://github.com/amineaith3/sirius-cp-cli" target="_blank" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                     </a>
-                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-brand-blue dark:hover:text-brand-pink transition-colors">
+                    <button id="theme-toggle" class="p-1.5 rounded bg-gray-200 dark:bg-brand-surface border border-gray-300 dark:border-brand-border text-gray-600 dark:text-gray-400 hover:text-brand-cyan dark:hover:text-brand-cyan transition-colors">
                         <!-- Sun Icon -->
-                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-3.22 4.22a1 1 0 010 1.415l-.708.708a1 1 0 01-1.414-1.414l.708-.708a1 1 0 011.415 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 010-1.415l-.708-.708a1 1 0 01-1.414 1.414l.708.708a1 1 0 011.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm3.22-4.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM10 5a5 5 0 100 10 5 5 0 000-10z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <!-- Moon Icon -->
-                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
                 </div>
             </div>
@@ -70,161 +68,182 @@
         
         <!-- Sidebar -->
         <aside class="hidden md:block w-64 flex-shrink-0 pr-8 sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto hide-scrollbar">
-            <nav class="space-y-8" id="toc">
+            <nav class="space-y-6" id="toc">
                 <div>
-                    <h3 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Getting Started</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#introduction" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">Introduction</a></li>
-                        <li><a href="#installation" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">Installation</a></li>
-                        <li><a href="#configuration" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">Configuration</a></li>
+                    <h3 class="text-xs font-bold font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 border-l-2 border-brand-cyan pl-2">Getting Started</h3>
+                    <ul class="space-y-1.5 text-sm font-mono">
+                        <li><a href="#introduction" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./intro</a></li>
+                        <li><a href="#installation" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./install</a></li>
+                        <li><a href="#configuration" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./config</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Codeforces</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#cf-quickstart" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">CF Quickstart</a></li>
-                        <li><a href="#cf-features" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">CF Features</a></li>
+                    <h3 class="text-xs font-bold font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 border-l-2 border-brand-cyan pl-2">Codeforces</h3>
+                    <ul class="space-y-1.5 text-sm font-mono">
+                        <li><a href="#cf-quickstart" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./quickstart</a></li>
+                        <li><a href="#cf-features" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./features</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">CSES Problem Set</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#cses-quickstart" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">CSES Quickstart</a></li>
-                        <li><a href="#cses-features" class="nav-link block text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-pink transition-colors">CSES Features</a></li>
+                    <h3 class="text-xs font-bold font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 border-l-2 border-brand-cyan pl-2">CSES</h3>
+                    <ul class="space-y-1.5 text-sm font-mono">
+                        <li><a href="#cses-quickstart" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./quickstart</a></li>
+                        <li><a href="#cses-features" class="nav-link block text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors pl-2">./features</a></li>
                     </ul>
                 </div>
             </nav>
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-4xl prose-a:text-brand-blue dark:prose-a:text-brand-pink prose-headings:scroll-mt-28">
+        <main class="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-4xl prose-a:text-brand-cyan prose-headings:font-mono prose-headings:scroll-mt-24">
             
-            <section id="introduction" class="mb-20">
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-pink rounded-lg blur opacity-25 dark:opacity-40"></div>
-                    <div class="relative bg-white dark:bg-slate-900 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6 p-8">
-                        <div>
-                            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-pink mb-4">Sirius CP CLI</h1>
-                            <p class="text-lg text-slate-600 dark:text-slate-300 m-0">The ultimate unified local environment for competitive programming. Built in Python, designed to completely eliminate the friction of context-switching between your browser, your code editor, and the grading servers.</p>
+            <section id="introduction" class="mb-16">
+                <div class="bg-gray-100 dark:bg-brand-surface border border-gray-300 dark:border-brand-border p-6 rounded-md">
+                    <h1 class="text-3xl font-extrabold font-mono text-gray-900 dark:text-white mb-2 tracking-tight">Sirius CP CLI</h1>
+                    <p class="text-base text-gray-600 dark:text-gray-400 m-0 leading-relaxed font-mono">The ultimate unified local environment for competitive programming. Built in Python, designed to eliminate browser friction and fully automate offline fetch-test-submit workflows.</p>
+                </div>
+            </section>
+
+            <section id="installation" class="mb-16">
+                <h2 class="text-2xl font-bold font-mono mb-4 text-gray-900 dark:text-white flex items-center">
+                    <span class="text-brand-cyan mr-2">#</span> Installation
+                </h2>
+                <p class="mb-3">Requires Python 3.9+ and <code>g++</code> configured natively or via WSL.</p>
+                
+                <div class="relative group mt-2 mb-4">
+                    <div class="bg-gray-100 dark:bg-[#0d1117] border border-gray-300 dark:border-brand-border rounded-md p-4 font-mono text-sm overflow-x-auto">
+                        <code class="text-gray-800 dark:text-gray-300">git clone https://github.com/amineaith3/sirius-cp-cli.git
+cd sirius-cp-cli
+pip install -e .</code>
+                    </div>
+                    <button class="copy-btn absolute top-2 right-2 p-1.5 rounded bg-gray-200 dark:bg-brand-surface border border-gray-300 dark:border-brand-border text-gray-500 hover:text-brand-cyan dark:hover:text-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity" title="Copy to clipboard">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-500 font-mono">Because the suite uses a Monorepo architecture, this single installation gives you access to both the <code>sirius-cf</code> and <code>sirius-cses</code> commands globally.</p>
+            </section>
+
+            <section id="configuration" class="mb-16">
+                <h2 class="text-2xl font-bold font-mono mb-4 text-gray-900 dark:text-white flex items-center">
+                    <span class="text-brand-cyan mr-2">#</span> Configuration
+                </h2>
+                
+                <h3 class="text-lg font-bold font-mono mt-6 mb-2">Codeforces</h3>
+                <div class="relative group mb-3">
+                    <div class="bg-gray-100 dark:bg-[#0d1117] border border-gray-300 dark:border-brand-border rounded-md p-3 font-mono text-sm">
+                        <code class="text-brand-cyan">sirius-cf init</code>
+                    </div>
+                    <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-2 p-1.5 rounded bg-gray-200 dark:bg-brand-surface border border-gray-300 dark:border-brand-border text-gray-500 hover:text-brand-cyan dark:hover:text-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </button>
+                </div>
+                <ul class="list-none pl-0 space-y-1 font-mono text-sm mb-8">
+                    <li><span class="text-gray-400">--</span> <strong>Handle</strong>: Tracks your solved problems.</li>
+                    <li><span class="text-gray-400">--</span> <strong>CF_COOKIE</strong>: Your Codeforces session string.</li>
+                    <li><span class="text-gray-400">--</span> <strong>Workspace Path</strong>: Absolute path for Codeforces data (e.g. <code>~/Desktop/cf-offline</code>).</li>
+                </ul>
+
+                <h3 class="text-lg font-bold font-mono mt-6 mb-2">CSES</h3>
+                <div class="relative group mb-3">
+                    <div class="bg-gray-100 dark:bg-[#0d1117] border border-gray-300 dark:border-brand-border rounded-md p-3 font-mono text-sm">
+                        <code class="text-brand-cyan">sirius-cses init</code>
+                    </div>
+                    <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-2 p-1.5 rounded bg-gray-200 dark:bg-brand-surface border border-gray-300 dark:border-brand-border text-gray-500 hover:text-brand-cyan dark:hover:text-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </button>
+                </div>
+                <ul class="list-none pl-0 space-y-1 font-mono text-sm">
+                    <li><span class="text-gray-400">--</span> <strong>Handle</strong>: Your CSES username.</li>
+                    <li><span class="text-gray-400">--</span> <strong>CSES_COOKIE</strong>: Your <code>PHPSESSID</code> string.</li>
+                    <li><span class="text-gray-400">--</span> <strong>Workspace Path</strong>: Categorized Workspace location (e.g. <code>~/Desktop/cses-offline</code>).</li>
+                </ul>
+            </section>
+
+            <section id="cf-quickstart" class="mb-16">
+                <h2 class="text-2xl font-bold font-mono mb-6 text-gray-900 dark:text-white flex items-center border-b border-gray-300 dark:border-brand-border pb-2">
+                    <span class="text-brand-cyan mr-2">#</span> Codeforces Quickstart
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">1. Find next problem</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cf next 800</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">2. Fetch directly</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cf fetch 1800 B</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">3. Test solution</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cf test 1800 B</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">4. Submit & poll</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cf submit 1800 B</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="installation" class="mb-20">
-                <h2 class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-slate-800 pb-2">Installation</h2>
-                <p>Ensure you have Python 3.9+ and a C++ Compiler (g++) configured natively or via WSL.</p>
-                <div class="bg-gray-100 dark:bg-slate-900 rounded-lg p-4 font-mono text-sm shadow-inner overflow-x-auto border border-gray-200 dark:border-slate-800">
-                    <code>git clone https://github.com/amineaith3/sirius-cp-cli.git<br>cd sirius-cp-cli<br>pip install -e .</code>
-                </div>
-                <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Because the suite uses a Monorepo architecture, this single installation gives you access to both the <code>sirius-cf</code> and <code>sirius-cses</code> commands globally.</p>
-            </section>
-
-            <section id="configuration" class="mb-20">
-                <h2 class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-slate-800 pb-2">Configuration</h2>
-                <p>Configure the CLI to automatically organize your problems into specific offline directories.</p>
+            <section id="cses-quickstart" class="mb-16">
+                <h2 class="text-2xl font-bold font-mono mb-6 text-gray-900 dark:text-white flex items-center border-b border-gray-300 dark:border-brand-border pb-2">
+                    <span class="text-brand-cyan mr-2">#</span> CSES Quickstart
+                </h2>
                 
-                <h3 class="text-xl font-semibold mt-8 mb-4">Codeforces</h3>
-                <div class="bg-gray-100 dark:bg-slate-900 rounded-lg p-4 font-mono text-sm mb-4 border border-gray-200 dark:border-slate-800">
-                    <code>sirius-cf init</code>
-                </div>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong>Handle</strong>: Tracks your solved problems.</li>
-                    <li><strong>CF_COOKIE</strong>: Your Codeforces session string (Required for submitting).</li>
-                    <li><strong>Workspace Path</strong>: The absolute path where `sirius-cf` should download all contests. (Defaults to `~/Desktop/cf-offline`).</li>
-                </ul>
-
-                <h3 class="text-xl font-semibold mt-8 mb-4">CSES</h3>
-                <div class="bg-gray-100 dark:bg-slate-900 rounded-lg p-4 font-mono text-sm mb-4 border border-gray-200 dark:border-slate-800">
-                    <code>sirius-cses init</code>
-                </div>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong>Handle</strong>: Your CSES username.</li>
-                    <li><strong>CSES_COOKIE</strong>: Your `PHPSESSID` cookie string (Required for submitting/syncing).</li>
-                    <li><strong>Workspace Path</strong>: The absolute path where `sirius-cses` builds your Categorized Dashboard. (Defaults to `~/Desktop/cses-offline`).</li>
-                </ul>
-            </section>
-
-            <section id="cf-quickstart" class="mb-20">
-                <h2 class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-slate-800 pb-2 text-brand-blue">Codeforces Quickstart</h2>
-                <div class="space-y-6">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-blue/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">1. Find your next problem</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cf next 800</code></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-blue/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">2. Fetch a specific problem</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cf fetch 1800 B</code></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-blue/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">3. Test your solution</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cf test 1800 B</code></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-blue/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">4. Submit and track</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cf submit 1800 B</code></div>
+                <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-5 rounded-md mb-4">
+                    <h4 class="font-bold text-sm mb-1 font-mono">1. Build Local Dashboard</h4>
+                    <p class="text-xs text-gray-500 mb-2 font-mono">Maps all 400 problems and generates `stats.txt` tracking.</p>
+                    <div class="relative group">
+                        <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-sm overflow-x-auto"><code class="text-brand-cyan">sirius-cses sync</code></div>
+                        <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-2 p-1.5 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </button>
                     </div>
                 </div>
-            </section>
 
-            <section id="cf-features" class="mb-20">
-                <h3 class="text-2xl font-bold mb-6">Codeforces Features</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <span class="text-brand-blue mr-2 font-bold">•</span>
-                        <span><strong>Offline-First Fetching</strong>: Scrapes the problem statement, injects MathJax for perfect offline math rendering, and extracts sample test cases.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-brand-blue mr-2 font-bold">•</span>
-                        <span><strong>Native & WSL Testing</strong>: Instantly compiles your C++ code natively (or via WSL if on Windows) and runs it against local test cases with line-by-line mismatch diffing.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-brand-blue mr-2 font-bold">•</span>
-                        <span><strong>Live Direct Submission</strong>: Submits your solution directly to the Codeforces judging servers, and polls the live grading status in real-time.</span>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="cses-quickstart" class="mb-20">
-                <h2 class="text-3xl font-bold mb-6 border-b border-gray-200 dark:border-slate-800 pb-2 text-brand-pink">CSES Quickstart</h2>
-                <div class="space-y-6">
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-pink/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">1. Build your local dashboard</h4>
-                        <p class="text-sm text-slate-500 mb-3">Maps all 400 problems and updates your stats.txt tracking files.</p>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cses sync</code></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">2. Fetch Next Problem</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cses next graph</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-pink/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">2. Fetch your next Graph problem</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cses next graph</code></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-pink/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">3. Test a solution</h4>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cses test 1068</code></div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:border-brand-pink/50 transition-colors">
-                        <h4 class="font-bold text-lg mb-2">4. Submit to CSES</h4>
-                        <p class="text-sm text-slate-500 mb-3">If ACCEPTED, your stats.txt will automatically update!</p>
-                        <div class="bg-gray-100 dark:bg-slate-900 rounded p-3 font-mono text-sm"><code>sirius-cses submit 1068</code></div>
+                    
+                    <div class="bg-gray-50 dark:bg-brand-surface border border-gray-200 dark:border-brand-border p-4 rounded-md">
+                        <h4 class="font-bold text-sm mb-2 font-mono">3. Submit</h4>
+                        <div class="relative group">
+                            <div class="bg-gray-200 dark:bg-[#0d1117] rounded p-2 font-mono text-xs overflow-x-auto"><code class="text-brand-cyan">sirius-cses submit 1068</code></div>
+                            <button class="copy-btn absolute top-1/2 -translate-y-1/2 right-1 p-1 rounded hover:bg-gray-300 dark:hover:bg-brand-border text-gray-500 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="cses-features" class="mb-20">
-                <h3 class="text-2xl font-bold mb-6">CSES Features</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <span class="text-brand-pink mr-2 font-bold">•</span>
-                        <span><strong>Categorized Workspace</strong>: Automatically creates human-readable directories like: <code>cses-offline/Introductory Problems/1068--Weird-Algorithm/</code>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-brand-pink mr-2 font-bold">•</span>
-                        <span><strong>Living Dashboard</strong>: A <code>stats.txt</code> file is dynamically generated in every category folder tracking your offline progress.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-brand-pink mr-2 font-bold">•</span>
-                        <span><strong>Bulk Offline Mirror</strong>: Run <code>download-all</code> to safely mirror all 400 problems, test cases, and HTML statements locally to your machine.</span>
-                    </li>
-                </ul>
             </section>
 
         </main>
