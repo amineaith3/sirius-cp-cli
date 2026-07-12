@@ -72,15 +72,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkmarkIcon = `<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
 
     copyButtons.forEach(btn => {
-        btn.addEventListener('click', async () => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
             // Find the sibling code element
             const codeEl = btn.parentElement.querySelector('code');
             if (!codeEl) return;
 
             const textToCopy = codeEl.innerText;
 
+            // Fallback for file:// protocol or local testing where navigator.clipboard is blocked
+            const fallbackCopy = (text) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed"; // Avoid scrolling
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
             try {
-                await navigator.clipboard.writeText(textToCopy);
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(textToCopy);
+                } else {
+                    fallbackCopy(textToCopy);
+                }
                 
                 // Show feedback
                 btn.innerHTML = checkmarkIcon;
