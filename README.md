@@ -1,10 +1,10 @@
-# Sirius CP CLI 🚀
+# Sirius CP CLI
 
 **Sirius CP CLI** is the ultimate unified local environment for competitive programming. Built in Python with Typer and Rich, it completely eliminates the friction of context-switching between your browser, your code editor, and the grading servers. It natively supports both **Codeforces** and the **CSES Problem Set** through two distinct modules.
 
 ---
 
-## 🌟 Modules
+## Modules
 
 ### 1. The Codeforces Module (`sirius-cf`)
 - **The `next` Tracker**: Type `sirius-cf next 1200` to instantly find an unsolved problem matching your target rating, skipping everything you've already solved.
@@ -21,7 +21,7 @@
 
 ---
 
-## 🛠️ Setup & Installation
+## Setup & Installation
 
 ### Requirements
 - Python 3.9+
@@ -38,7 +38,7 @@ pip install -e .
 
 ---
 
-## ⚙️ Configuration & Initialization
+## Configuration & Initialization
 
 Once installed, you need to configure your workspaces and authentication cookies. You can configure the CLI to automatically dump your problems and code into a specific directory, ensuring your terminal doesn't get cluttered.
 
@@ -69,7 +69,7 @@ It will prompt you for:
 
 ---
 
-## 💻 Codeforces Quickstart
+## Codeforces Quickstart
 
 **1. Find your next problem:**
 ```bash
@@ -90,7 +90,7 @@ sirius-cf submit 1800 B
 
 ---
 
-## 🌲 CSES Quickstart
+## CSES Quickstart
 
 **1. Build your local dashboard:**
 *This maps all 400 problems and updates your `stats.txt` tracking files.*
@@ -118,7 +118,7 @@ sirius-cses report 1068
 
 ---
 
-## ⚠️ Ethical Use & Disclaimer
+## Ethical Use & Disclaimer
 This CLI tool is designed strictly as a local workflow optimization tool to help you fetch problems and submit your **own, original code** without leaving your terminal. 
 
 - **Be Polite:** Do not modify the script to spam or DDoS the servers. The `fetch` commands cache data locally by design. The `download-all` feature is safely rate-limited.
